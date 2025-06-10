@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Variable Expressions</title>
+    <style>
+        table{
+            width: 40%;
+            border-collapse: collapse;
+        }
+        td, th{
+            padding: 5px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Variable Expressions demo</h1>
+    <div>
+        <h3>User details:</h3>
+        <table>
+            <tr>
+                <td>Name</td>
+                <td th:text="${user.name}"></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td th:text="${user.email}"></td>
+            </tr>
+            <tr>
+                <td>Role</td>
+                <td th:text="${user.role}"></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td th:text="${user.gender}"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div>
+    <h3>List of User details:</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Gender</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="user_item : ${users}">
+                    <td th:text="${user_item.name}"></td>
+                    <td th:text="${user_item.email}"></td>
+                    <td th:text="${user_item.role}"></td>
+                    <td th:text="${user_item.gender}"></td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</body>
+</html>
