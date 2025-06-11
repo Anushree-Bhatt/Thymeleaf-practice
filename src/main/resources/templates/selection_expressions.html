@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Variable Expressions</title>
+    <style>
+        table{
+            width: 40%;
+            border-collapse: collapse;
+        }
+        td{
+            padding: 5px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Selection Expressions demo</h1>
+    <div>
+        <h3>User details:</h3>
+        <table th:object="${user}">
+            <tr>
+                <td>Name</td>
+                <td th:text="*{name}"></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td th:text="*{email}"></td>
+            </tr>
+            <tr>
+                <td>Role</td>
+                <td th:text="*{role}"></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td th:text="*{gender}"></td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>
