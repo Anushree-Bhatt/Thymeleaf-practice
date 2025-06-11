@@ -30,4 +30,11 @@ public class UserController {
         model.addAttribute("user", user1);
         return "selection_expressions";
     }
+
+    @GetMapping("/message-expressions")
+    public String messageExpression(Model model){
+        return "message_expressions";
+    }
+
+
 }
