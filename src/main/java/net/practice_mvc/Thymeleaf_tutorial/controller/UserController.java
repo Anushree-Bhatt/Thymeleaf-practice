@@ -4,6 +4,9 @@ import net.practice_mvc.Thymeleaf_tutorial.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Arrays;
 import java.util.List;
@@ -34,6 +37,30 @@ public class UserController {
     @GetMapping("/message-expressions")
     public String messageExpression(Model model){
         return "message_expressions";
+    }
+
+    @GetMapping("/link-expressions")
+    public String linkExpression(Model model){
+        model.addAttribute("user_id",1);
+        return "link_expressions";
+    }
+
+    @GetMapping(value = "/link-expressions-param")
+    @ResponseBody
+    public String linkExpression_with_parameter1(@RequestParam String name){
+        return "Hi "+name+"!";
+    }
+
+    @GetMapping(value = "/link-expressions-param1/{name}")
+    @ResponseBody
+    public String linkExpression_with_parameter2(@PathVariable String name){
+        return "Hi "+name+"!";
+    }
+
+    @GetMapping(value = "/link-expressions-param2/{id}")
+    @ResponseBody
+    public String linkExpression_with_parameter3(@PathVariable Integer id){
+        return "Your id id:"+id;
     }
 
 

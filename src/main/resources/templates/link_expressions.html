@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Link expressions</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <h1>Link expressions</h1>
+    <p>
+        <a th:href="@{/selection-expressions}">selection expression</a>
+    </p>
+    <p>
+        <a th:href="@{/link-expressions-param(name = Anushree)}">link expressions with query parameter - name</a>
+    </p>
+    <p>
+        <a th:href="@{/link-expressions-param1/{name}(name = Anushree)}">link expressions with Path variable - name</a>
+    </p>
+    <p>
+        <a th:href="@{/link-expressions-param2/{id}(id = ${user_id})}">link expressions with Path variable - id - dynamic</a>
+    </p>
+
+
+</body>
+</html>
