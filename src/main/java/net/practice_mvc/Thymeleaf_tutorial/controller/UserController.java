@@ -63,5 +63,9 @@ public class UserController {
         return "Your id id:"+id;
     }
 
+    @GetMapping("/fragment_expressions")
+    public String fragment_expressions(){
+        return "fragment_expressions";
+    }
 
 }

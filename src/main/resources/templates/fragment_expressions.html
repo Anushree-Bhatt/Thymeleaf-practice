@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <style>
+        div{
+            display:flex;
+            height:100px;
+            width:50%;
+            background-color:yellow;
+            border: 1px solid black;
+            margin:10px;
+            align-items:center;
+            justify-content:center;
+        }
+    </style>
+</head>
+<body>
+    <div th:replace="~{/common/header :: header}"></div>
+    <div><h3>Fragment Expressions</h3></div>
+    <div th:replace="~{/common/footer :: footer}"></div>
+</body>
+</html>
