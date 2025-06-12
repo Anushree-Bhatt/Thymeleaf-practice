@@ -94,4 +94,14 @@ public class UserController {
         return "if_unless.html";
     }
 
+    @GetMapping("/switch_case")
+    public String switch_case(Model model){
+        User user1 = new User("Anushree", "anushreebhatt357@gmail.com", "ADMIN", "female");
+        User user2 = new User("Ananya", "ananya@gmail.com", "USER", "female");
+        User user3 = new User("Sam", "sam@gmail.com", "GUEST", "female");
+        model.addAttribute("user", user3);
+        return "switch_case.html";
+    }
+
+
 }

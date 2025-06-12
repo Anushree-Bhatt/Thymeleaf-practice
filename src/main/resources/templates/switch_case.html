@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Thymeleaf Switch-case demo</h1>
+    <h4 th:text="'User: '+ ${user.name}"></h4>
+    <div th:switch="${user.role}">
+        <p th:case="'ADMIN'">The user is Admin. Admin has the rights on update and delete operations.</p>
+        <p th:case="'USER'">The user has regular User permission. User can operate view action.</p>
+        <p th:case="*">The user is Guest. Guest do have any access.</p>
+    </div>
+</body>
+</html>
