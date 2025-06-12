@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Variable Expressions</title>
+    <style>
+        table{
+            width: 40%;
+            border-collapse: collapse;
+        }
+        td, th{
+            padding: 5px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>th:each and status attribute demo</h1>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Count</th>
+                    <th>Index</th>
+                    <th>Size</th>
+                    <th>Even</th>
+                    <th>Odd</th>
+                    <th>First one?</th>
+                    <th>Last one?</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Gender</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each = "user_item, userStatus : ${users}">
+                    <td th:text="${userStatus.count}"></td>
+                    <td th:text="${userStatus.index}"></td>
+                    <td th:text="${userStatus.size}"></td>
+                    <td th:text="${userStatus.even}"></td>
+                    <td th:text="${userStatus.odd}"></td>
+                    <td th:text="${userStatus.first}"></td>
+                    <td th:text="${userStatus.last}"></td>
+                    <td th:text="${user_item.name}"></td>
+                    <td th:text="${user_item.email}"></td>
+                    <td th:text="${user_item.role}"></td>
+                    <td th:text="${user_item.gender}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

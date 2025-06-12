@@ -68,4 +68,17 @@ public class UserController {
         return "fragment_expressions";
     }
 
+    @GetMapping("/looping")
+    public String looping(Model model){
+        User user1 = new User("Anushree", "anushreebhatt357@gmail.com", "ADMIN", "female");
+        List<User> users = Arrays.asList(
+                user1,
+                new User("Ramesh", "ramesh@gmail.com", "USER", "male"),
+                new User("Ananya", "ananya@gmail.com", "USER", "female")
+        );
+        model.addAttribute("user", user1);
+        model.addAttribute("users", users);
+        return "looping.html";
+    }
+
 }
