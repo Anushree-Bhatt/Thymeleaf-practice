@@ -81,4 +81,17 @@ public class UserController {
         return "looping.html";
     }
 
+    @GetMapping("/if_unless")
+    public String if_unless(Model model){
+        User user1 = new User("Anushree", "anushreebhatt357@gmail.com", "ADMIN", "female");
+        List<User> users = Arrays.asList(
+                user1,
+                new User("Ramesh", "ramesh@gmail.com", "USER", "male"),
+                new User("Ananya", "ananya@gmail.com", "USER", "female")
+        );
+        model.addAttribute("user", user1);
+        model.addAttribute("users", users);
+        return "if_unless.html";
+    }
+
 }

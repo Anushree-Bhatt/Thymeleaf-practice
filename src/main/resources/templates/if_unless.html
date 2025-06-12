@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Variable Expressions</title>
+    <style>
+        table{
+            width: 40%;
+            border-collapse: collapse;
+        }
+        td, th{
+            padding: 5px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>th:each and status attribute demo</h1>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Gender</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each = "user_item: ${users}">
+                    <td th:text="${user_item.name}"></td>
+                    <td th:text="${user_item.email}"></td>
+                    <td th:text="${user_item.role}"></td>
+                    <td th:text="${user_item.gender}"></td>
+                    <td>
+                        <a th:href="@{/update}" th:if="${user_item.role} == 'ADMIN'">Update</a>
+                        <a th:href="@{/delete}" th:if="${user_item.role} == 'ADMIN'">Delete</a>
+                        <a th:href="@{/update}" th:unless="${user_item.role} == 'ADMIN'">View</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
