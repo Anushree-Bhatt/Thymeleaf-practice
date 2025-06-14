@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" xmlns:th="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+    <h1>User registered successfully!</h1>
+    <div>
+        <p>Name: <strong th:text="${user_data.name}"></strong></p>
+        <p>Email: <strong th:text="${user_data.email}"></strong></p>
+        <p>Password: <strong th:text="${user_data.password}"></strong></p>
+        <p>Gender: <strong th:text="${user_data.gender}"></strong></p>
+        <p>Profession: <strong th:text="${user_data.profession}"></strong></p>
+        <p>Married: <strong th:text="${user_data.married}"></strong></p>
+        <p>Address: <strong th:text="${user_data.address}"></strong></p>
+    </div>
+
+</body>
+</html>

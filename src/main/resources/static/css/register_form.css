@@ -1,0 +1,56 @@
+body{
+            margin:0;
+            padding:0;
+            font-family: Arial, Helvetica, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            background: rgb(127, 140, 170);
+        }
+        .container{
+            margin: 3%;
+            width: 30%;
+            height: 65%;
+            border: 1px solid black;
+            background-color: rgb(144, 238, 144);
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 70px 200px;
+            background-color: #EAEFEF;
+            border-radius: 20px;
+        }
+        .heading{
+            background-color: #333446;
+            text-align: center;
+            border-radius: 18px 18px 0px 0px;
+        }
+        .form_container{
+           display: grid;
+           padding: 30px;
+           grid-template-columns: 1fr;
+           gap: 20px;
+        }
+        .grid_item{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        input[type="text"], input[type="password"], textarea{
+            padding: 6px;
+            margin-top: -7px;
+            border-radius: 5px;
+        }
+        select{
+            padding: 3.4px;
+        }
+        button{
+            width: 100%;
+            padding: 10px 50px 10px 50px;
+            border-radius: 5px;
+            margin-top: 5px;
+            transition: all 0.2s ease-in-out;
+        }
+
+        button:hover{
+            background-color: rgb(174, 196, 194);
+            transform: scaleY(1.05);
+        }

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/register_form.css}">
+</head>
+<body>
+<div class="container">
+    <div class="heading">
+        <h2 style="color: white;">User Registration</h2>
+    </div>
+
+    <form class="form_container" method="post" th:object="${userForm}" th:action="@{register/save}">
+        <div class = "grid_item">
+            <label for="name">Name</label>
+            <input type="text" id="name" th:field="*{name}">
+        </div>
+
+        <div class = "grid_item">
+            <label for="email">Email</label>
+            <input type="text" id="email" th:field="*{email}">
+        </div>
+
+        <div class = "grid_item">
+            <label for="password">Password</label>
+            <input type="password" id="password" th:field="*{password}">
+        </div>
+
+        <div class = "grid_item">
+            <label>Gender</label>
+            <div>
+                <input type="radio" th:field="*{gender}" value="male">Male
+                <input type="radio" th:field="*{gender}" value="female">Female
+            </div>
+        </div>
+
+        <div class = "grid_item">
+            <label for="profession">Profession</label>
+            <select id="profession" th:field="*{profession}">
+                <option th:each="p : ${professions}" th:text="${p}" th:value="${p}"></option>
+            </select>
+        </div>
+
+        <div class = "grid_item">
+            <label>Married</label>
+            <div>
+                <input type="checkbox" th:field="*{married}" value="true">Yes
+                <input type="checkbox" th:field="*{married}" value="false">No
+            </div>
+        </div>
+
+        <div class = "grid_item">
+            <label for="address">Address</label>
+            <textarea id="address" rows="5" cols="10" th:field="*{address}">
+                </textarea>
+        </div>
+
+        <div style=" text-align: center;">
+            <button type="submit">submit</button>
+        </div>
+
+    </form>
+
+</div>
+</body>
+</html>
