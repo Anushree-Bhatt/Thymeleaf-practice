@@ -31,8 +31,8 @@
         <div class = "grid_item">
             <label>Gender</label>
             <div>
-                <input type="radio" th:field="*{gender}" value="male">Male
-                <input type="radio" th:field="*{gender}" value="female">Female
+                <input type="radio" th:field="*{gender}" th:value="male">Male
+                <input type="radio" th:field="*{gender}" th:value="female">Female
             </div>
         </div>
 
@@ -46,8 +46,7 @@
         <div class = "grid_item">
             <label>Married</label>
             <div>
-                <input type="checkbox" th:field="*{married}" value="true">Yes
-                <input type="checkbox" th:field="*{married}" value="false">No
+                <input type="checkbox" th:field="*{married}" th:value="true">Yes
             </div>
         </div>
 
